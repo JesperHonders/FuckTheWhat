@@ -84,3 +84,8 @@ body {
 #dash_yield {
   margin-left: 1em;
 }
+
+#plein_chart{
+    max-width:1000px;
+    max-height:400px;
+}
