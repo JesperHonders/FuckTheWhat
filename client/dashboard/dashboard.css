@@ -14,12 +14,18 @@ body {
 
 #dash_profile {
   display: block;
-  margin: 0 auto;
-  margin: 1em 2em;
+  margin: 1em;
+  padding: 1em 0 2em 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,.2);
 }
 
 #dash_profile_image {
   border-radius: 50%;
+  width: 130px;
+  height: 130px;
+  border: 3px solid rgba(255,255,255,.5);
+  margin-bottom: 1em;
 }
 
 #dash_profile_name {
@@ -32,6 +38,7 @@ body {
 #dash_profile_function {
   font-size: 13px;
 }
+
 #dash_aside {
   color: #a7b1c2;
   height: 100vh;
@@ -43,12 +50,18 @@ body {
 
 #dash_menu ul {
   padding: 0;
+  margin: 0;
   width: 100%;
 }
 
 #dash_menu ul li {
   list-style: none;
   padding: 1em;
+  -webkit-transition: all .1s ease-in;
+  -moz-transition: all .1s ease-in;
+  -ms-transition: all .1s ease-in;
+  -o-transition: all .1s ease-in;
+  transition: all .1s ease-in;
 }
 
 #dash_menu a {
@@ -56,11 +69,13 @@ body {
   text-decoration: none;
 }
 
-#dash_menu li {
+#dash_menu li:hover {
   color: white;
   background-color: #293846;
+  border-left: 4px solid #19aa8d;
 }
 
 #dash_menu i {
   margin-right: 1em;
+  min-width: 16px;
 }
