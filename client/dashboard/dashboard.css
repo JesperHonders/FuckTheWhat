@@ -80,3 +80,7 @@ body {
   margin-right: 1em;
   min-width: 16px;
 }
+
+#dash_yield {
+  margin-left: 1em;
+}
