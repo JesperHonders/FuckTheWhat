@@ -57,6 +57,7 @@ body {
 #dash_menu ul li {
   list-style: none;
   padding: 1em;
+  font-weight: bold;
   -webkit-transition: all .1s ease-in;
   -moz-transition: all .1s ease-in;
   -ms-transition: all .1s ease-in;
