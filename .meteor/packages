@@ -20,3 +20,6 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 iron:router
 accounts-base
 chart:chart
+msavin:mongol
+accounts-password
+accounts-ui-unstyled

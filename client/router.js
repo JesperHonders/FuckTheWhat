@@ -10,6 +10,10 @@ Router.route('/pleinen', function () {
   this.render('plein_list');
 });
 
+Router.route('/settings', function () {
+  this.render('settings');
+});
+
 Router.route('/plein/:_id', function () {
   this.render('plein_detail', {
     data: function () {

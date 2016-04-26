@@ -4,7 +4,9 @@
   </header> -->
   <aside id="dash_aside">
     <div id="dash_profile">
+
       <img id="dash_profile_image" src="/img/janneke.jpg" alt="Janneke Uitterhoeve"/>
+      {{> loginButtons}}
       <strong id="dash_profile_name">Janneke Uitterhoeve</strong>
       <span id="dash_profile_function">Programma coördinator</span>
     </div>
@@ -17,7 +19,7 @@
         </a>
         <a href="/settings">
           <li>
-            <i class="fa fa-cog" aria-hidden="true"></i> Settings
+            <i class="fa fa-cog" aria-hidden="true"><a href="{{pathFor 'settings'}}"></a></i> Settings
           </li>
         </a>
         <a href="/pleinen">
