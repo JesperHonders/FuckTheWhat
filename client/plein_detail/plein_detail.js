@@ -16,8 +16,6 @@ Template.plein_detail.events ({
 
     Meteor.call('addEvent', pleinId, name, date)
 
-    alert("Toegevoegd");
-
     event.target.name.value = '';
     event.target.date.value = '';
 
