@@ -2,7 +2,30 @@
   <header>
     <img src="{{pleinen.image}}" />
   </header>
-<h1>{{pleinen.name}}</h1>
+  <main>
+    <h1>{{pleinen.name}}</h1>
+
+  <section id="pl_charts">
+
+  </section>
+  <section id="pl_notification">
+
+  </section>
+  <section id="pl_events">
+    <form class="add-event">
+      <input name="name" type="text" placeholder="Event name" />
+      <input name="date" type="date"/>
+      <input type="submit" value="+" />
+    </form>
+    <ul>
+      {{#each events}}
+      <li>
+        {{date}} {{name}}
+      </li>
+      {{/each}}
+    </ul>
+  </section>
+  </main>
 
 
 </template>

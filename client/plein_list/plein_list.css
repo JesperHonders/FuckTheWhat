@@ -1,3 +1,7 @@
-#pl_list {
-  display: flex;
+.pl_item {
+	background: white;
+	padding-top: 15px;
+	border-top: 5px solid #e7eaec;
+	-webkit-box-shadow: 0 0 20px 10px rgba(0,0,0,.05);
+	box-shadow: 0 0 10px 5px rgba(0,0,0,.01);
 }
