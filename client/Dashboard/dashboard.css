@@ -1,0 +1,53 @@
+/* CSS declarations go here */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+#dash_head {
+  background-color: #2f4050;
+  width: 100%;
+}
+
+#dash_profile {
+  display: block;
+  margin: 0 auto;
+  margin: 1em 2em;
+}
+
+#dash_profile_image {
+  border-radius: 50%;
+}
+
+#dash_profile_name {
+  display: block;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+#dash_profile_function {
+  font-size: 13px;
+}
+#dash_aside {
+  color: #a7b1c2;
+  height: 100vh;
+  background-color: #2f4050;
+  width: 220px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+}
+
+#dash_menu ul {
+  padding: 0;
+  width: 100%;
+}
+
+#dash_menu ul li {
+  list-style: none;
+  padding: 1em;
+  background: #293846;
+}

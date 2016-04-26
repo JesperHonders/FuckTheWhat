@@ -1,0 +1,29 @@
+<template name="dashboard">
+  <!-- <header id="dash_head">
+    Welcome #User
+  </header> -->
+  <aside id="dash_aside">
+    <div id="dash_profile">
+      <img id="dash_profile_image" src="http://www.placehold.it/100" />
+      <strong id="dash_profile_name">Jesper Honders</strong>
+      <span id="dash_profile_function">Beroeps Eindbaas</span>
+    </div>
+    <hr />
+    <nav id="dash_menu">
+      <ul>
+        <li>
+          <a>dashboard</a>
+        </li>
+        <li>
+          <a>Meetpunten</a>
+        </li>
+        <li>
+          <a>zoeken</a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+  <main id="dash_yield">
+    {{> yield}}
+  </main>
+</template>
