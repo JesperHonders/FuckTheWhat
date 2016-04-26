@@ -1,0 +1,18 @@
+<template name="plein_list">
+  <h1>
+    pleinen
+  </h1>
+  <main id="pl_list">
+    <section class="pl_section">
+      {{#each pleinen}}
+      <a href="plein/{{id}}">
+        <header>
+          <img src="{{image}}" />
+        </header>
+        <h1>{{name}}</h1>
+      </a>
+      {{/each}}
+    </section>
+  </main>
+
+</template>

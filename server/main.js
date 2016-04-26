@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 
 Meteor.startup(() => {
-  // code to run on server at startup
+
 });
+
+Pleinen.insert({name: 'N-lounge', image: 'http://www.placehold.it/300x150'})
