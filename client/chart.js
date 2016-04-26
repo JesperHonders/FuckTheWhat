@@ -35,13 +35,12 @@ Template.home.rendered = function () {
         datasetFill: true,
         responsive: true,
         maintainAspectRatio: false,
-
         //String - A legend template
         legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].strokeColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
 
     };
 
-    //set data
+    //set data - replace the random() function with api data later
     var data = {
         labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24"],
         datasets: [{
@@ -77,40 +76,53 @@ Template.home.rendered = function () {
     //init linechart
     var pleinChart = new Chart(ctx).Line(data, options);
 
-    //old data for now, for some reason cant store the old var as it updated
+    //old data for now, for some reason cant store the old var as it updates - need to get this out of collection
     var sensorData = {
-                label: "Plein 1",
-                fillColor: "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
-            };
-    
-    //create click listener for checkboxes
-    var pleinCheckbox = document.querySelectorAll('[id*="plein_checkbox"]');
-    for (i = 0; i < pleinCheckbox.length; i++) {
-        pleinCheckbox[i].addEventListener('click', function () {
-            //take last digit of id for selected line
-            var selectedLine = this.id.substr(-1);
-            //check if checked
-            if (this.checked == true) {
-                data.datasets[selectedLine] = {};
-                
-                pleinChart.destroy();
-                pleinChart = new Chart(ctx).Line(data, options);
-            //if not checked add old data
-            }else{
-                data.datasets[selectedLine] = sensorData;
-                pleinChart.destroy();
-                pleinChart = new Chart(ctx).Line(data, options);
+        label: "Plein 1",
+        fillColor: "rgba(220,220,220,0.2)",
+        strokeColor: "rgba(220,220,220,1)",
+        pointColor: "rgba(220,220,220,1)",
+        pointStrokeColor: "#fff",
+        pointHighlightFill: "#fff",
+        pointHighlightStroke: "rgba(220,220,220,1)",
+        data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
+    };
+
+    var chartFunctions = {
+        //create click listener for checkboxes
+        hideShow: function () {
+            var pleinCheckbox = document.querySelectorAll('[id*="plein_checkbox"]');
+            for (i = 0; i < pleinCheckbox.length; i++) {
+                pleinCheckbox[i].addEventListener('click', function () {
+                    //take last digit of id for selected line
+                    var selectedLine = this.id.substr(-1);
+                    //check if checked
+                    if (this.checked == true) {
+                        data.datasets[selectedLine] = {};
+
+                        pleinChart.destroy();
+                        pleinChart = new Chart(ctx).Line(data, options);
+                        //if not checked add old data
+                    } else {
+                        data.datasets[selectedLine] = sensorData;
+                        pleinChart.destroy();
+                        pleinChart = new Chart(ctx).Line(data, options);
+                    }
+                });
             }
-        });
+        },
+        //add new value and (optionally) delete the first value
+        updateChart: function () {
+            if (data.datasets[0].data.length > 23) {
+                pleinChart.removeData();
+            }
+            pleinChart.addData()
+       },
     }
 
-    //random number
+    chartFunctions.hideShow();
+    
+    //random number for testdata
     function random() {
         return Math.floor((Math.random() * 100) + 1);
     }
