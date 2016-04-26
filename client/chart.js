@@ -90,7 +90,7 @@ Template.home.rendered = function () {
 
     var chartFunctions = {
         //create click listener for checkboxes
-        hideShow: function () {
+        showChart: function () {
             var pleinCheckbox = document.querySelectorAll('[id*="plein_checkbox"]');
             for (i = 0; i < pleinCheckbox.length; i++) {
                 pleinCheckbox[i].addEventListener('click', function () {
@@ -120,7 +120,7 @@ Template.home.rendered = function () {
        },
     }
 
-    chartFunctions.hideShow();
+    chartFunctions.showChart();
     
     //random number for testdata
     function random() {
