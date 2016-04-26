@@ -49,5 +49,18 @@ body {
 #dash_menu ul li {
   list-style: none;
   padding: 1em;
-  background: #293846;
+}
+
+#dash_menu a {
+  color: #a7b1c2;
+  text-decoration: none;
+}
+
+#dash_menu li {
+  color: white;
+  background-color: #293846;
+}
+
+#dash_menu i {
+  margin-right: 1em;
 }
