@@ -89,3 +89,7 @@ body {
     max-width:1000px;
     max-height:400px;
 }
+
+.container{
+    display:flex;
+}

@@ -76,7 +76,7 @@ Template.home.rendered = function () {
     //init linechart
     var pleinChart = new Chart(ctx).Line(data, options);
 
-    //old data for now, for some reason cant store the old var as it updates - need to get this out of collection
+    //old data for now, for some reason cant store the old var as it updates - need to get this out of collection?
     var sensorData = {
         label: "Plein 1",
         fillColor: "rgba(220,220,220,0.2)",
@@ -85,7 +85,7 @@ Template.home.rendered = function () {
         pointStrokeColor: "#fff",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(220,220,220,1)",
-        data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
+        data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
     };
 
     var chartFunctions = {
