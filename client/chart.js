@@ -117,13 +117,24 @@ Template.home.rendered = function () {
                 pleinChart.removeData();
             }
             pleinChart.addData()
-       },
+        },
     }
 
     chartFunctions.showChart();
-    
-    //random number for testdata
+
+    //random number for testdata, can make an api call out of this
     function random() {
         return Math.floor((Math.random() * 100) + 1);
     }
+
+    var newsfeedFunctions = {
+        newsfeed: ['Overlast op plein 2 - 12:00', 'Overlast op plein 1 - 14:00'],
+        addItems: function () {
+            for (var i = 0; i < newsfeed.length; i++) {
+               //$('#newsfeed').append('<span>'+newsfeed[i]+'</span>');
+            }
+        }
+    }
+
+    newsfeedFunctions.addItems();
 };
