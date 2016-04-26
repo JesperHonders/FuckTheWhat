@@ -1,5 +1,10 @@
 Template.plein_list.helpers ({
-  Events: function(){
+  Pleinen: function(){
     return Pleinen.find({});
   }
 })
+
+
+Template.plein_list.onCreated(function bodyOnCreated() {
+  Meteor.subscribe('Pleinen');
+});
