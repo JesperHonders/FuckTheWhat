@@ -1,0 +1,22 @@
+<template name="mobile_active">
+    <main class="mobile_container">
+      <header>
+        <h1>Mobile dingest</h1>
+      </header>
+      {{#each meldingen}}
+        {{#if isActive}}
+          {{#unless isDone}}
+            <div>
+              <span>{{name}}</span>
+              <span>{{time}}</span>
+              <button class="move" data-id="{{_id}}">Go</button>
+            </div>
+          {{/unless}}
+        {{/if}}
+      {{/each}}
+    </main>
+    <footer>
+      <a href="/mobile">Meldingen</a>
+      <a href="/mobile/active">Mee bezig</a>
+    </footer>
+</template>
