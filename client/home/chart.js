@@ -51,6 +51,7 @@ Template.home.rendered = function () {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
+                //data: chartFunctions.addData(1);
                 data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
             }, {
                 label: "Plein 2",
@@ -60,6 +61,7 @@ Template.home.rendered = function () {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
+                //data: chartFunctions.addData(2);
                 data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
             }, {
                 label: "Plein 3",
@@ -69,13 +71,12 @@ Template.home.rendered = function () {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(151,187,205,1)",
+                //data: chartFunctions.addData(3);
                 data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
             }]
     };
 
-    //init linechart
-    var pleinChart = new Chart(ctx).Line(data, options);
-
+    
     //old data for now, for some reason cant store the old var as it updates - need to get this out of collection?
     var sensorData = {
         label: "Plein 1",
@@ -85,10 +86,20 @@ Template.home.rendered = function () {
         pointStrokeColor: "#fff",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(220,220,220,1)",
+        //data: chartFunctions.addData(3);
         data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
     };
 
     var chartFunctions = {
+        addData: function(sensor){
+                //fill in apiData here based on which sensor is called
+                var data;
+                var apiData;
+                for (var i; i < apiData.length; i++) {
+                    chartFunctions.data.push(apiData[i]);
+                }
+                return data
+        },
         //create click listener for checkboxes
         showChart: function () {
             var pleinCheckbox = document.querySelectorAll('[id*="plein_checkbox"]');
@@ -127,14 +138,7 @@ Template.home.rendered = function () {
         return Math.floor((Math.random() * 100) + 1);
     }
 
-    var newsfeedFunctions = {
-        newsfeed: ['Overlast op plein 2 - 12:00', 'Overlast op plein 1 - 14:00'],
-        addItems: function () {
-            for (var i = 0; i < newsfeed.length; i++) {
-               //$('#newsfeed').append('<span>'+newsfeed[i]+'</span>');
-            }
-        }
-    }
-
-    newsfeedFunctions.addItems();
+    
+    //init linechart
+    var pleinChart = new Chart(ctx).Line(data, options);
 };
