@@ -5,3 +5,18 @@ Meteor.publish('Pleinen', function pleinenPublication() {
 Meteor.publish('Events', function eventsPublication() {
   return Events.find();
 })
+
+
+// db.Pleinen.insert({
+// 	name: "Beukenweg",
+// 	image: "plein1.png"
+// })
+// db.Pleinen.insert({
+// 	name: "Steve Bikoplein",
+// 	image: "plein2.png"
+// })
+// db.Pleinen.insert({
+// 	name: "Mariotteplein",
+// 	image: "plein3.png"
+// })
+
