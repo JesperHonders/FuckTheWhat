@@ -8,9 +8,9 @@
                 <button id="chart_year">Jaar</button>
                 <button id="chart_datepicker">Icon</button>
             </section>
-            
+
             <canvas id="plein_chart" width="1000" height="400"></canvas>
-            
+
             <section id="charts_checkboxes">
                 <input id="plein_checkbox0" type="checkbox"/> Plein 1
                 <input id="plein_checkbox1" type="checkbox"/> Plein 2
@@ -19,6 +19,12 @@
         </main>
         <aside id="newsfeed">
             <h2>Newsfeed</h2>
+            {{#each meldingen}}
+              {{name}}
+              {{time}}
+              <a href="{{_id}}"></a>
+              <br />
+            {{/each}}
         </aside>
     </div>
 
