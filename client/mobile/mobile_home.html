@@ -7,7 +7,7 @@
       {{#if isActive}}
       {{else}}
       <div class="melding">
-        <h3>{{time}}</h3>
+        <h3>{{unixToTime time}}</h3>
         <h2>{{name}}</h2>
         <button class="move" data-id="{{_id}}">Go</button>
       </div>
