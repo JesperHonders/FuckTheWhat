@@ -1,0 +1,18 @@
+<template name="mobile_home">
+  <main class="mobile_container">
+    <header>
+      <h1>Mobile dingest</h1>
+    </header>
+    {{#each meldingen}}
+    <div>
+      <span>{{name}}</span>
+      <span>{{time}}</span>
+      <a href="mobile/melding/{{_id}}">Go</a>
+    </div>
+    {{/each}}
+  </main>
+  <footer>
+<a>!</a>
+<a>Mee bezig</a>
+  </footer>
+</template>
