@@ -19,6 +19,15 @@ Router.route('/mobile', function () {
   this.render('mobile_home');
 });
 
+Router.route('/mobile/melding/:_id', function () {
+  this.render('mobile_detail', {
+    data: function () {
+      return id = this.params._id
+    }
+  });
+});
+
+
 Router.route('/plein/:_id', function () {
   this.render('plein_detail', {
     data: function () {

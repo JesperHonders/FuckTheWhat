@@ -115,6 +115,11 @@ a:hover {
     width:100%;
 }
 
+.mobile_container_detail{
+   display:flex;
+   flex-direction:column;
+}
+
 #newsfeed{
     margin-left:1em;
 }
