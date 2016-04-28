@@ -23,3 +23,6 @@ chart:chart
 msavin:mongol
 accounts-password
 accounts-ui-unstyled
+check
+cfs:standard-packages
+cfs:gridfs
