@@ -27,3 +27,4 @@ check
 cfs:standard-packages
 cfs:gridfs
 twbs:bootstrap
+perak:mqtt-collection

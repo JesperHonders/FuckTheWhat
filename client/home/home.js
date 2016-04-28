@@ -6,4 +6,5 @@ Template.home.helpers ({
 
 Template.home.onCreated(function bodyOnCreated() {
   Meteor.subscribe('Meldingen');
+  Meteor.subscribe('PleinData');
 });

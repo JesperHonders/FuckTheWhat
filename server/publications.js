@@ -1,5 +1,5 @@
 Meteor.publish('Pleinen', function () {
-	
+
 	if (Pleinen.find().count()<=0) {
 		Pleinen.insert({
 			name: "Beukenweg",
@@ -20,14 +20,14 @@ Meteor.publish('Pleinen', function () {
 Meteor.publish("ftwimages", function(){ return Ftwimages.find(); });
 
 
-Meteor.publish('Events', function eventsPublication() {
+Meteor.publish('Events', function() {
   return Events.find();
 })
 
-Meteor.publish('Meldingen', function meldingenPublication() {
+Meteor.publish('Meldingen', function() {
   return Meldingen.find();
 })
 
-
-
-
+Meteor.publish('PleinData', function() {
+  return PleinData.find();
+})
