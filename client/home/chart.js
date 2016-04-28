@@ -138,18 +138,6 @@ Template.home.rendered = function () {
         return Math.floor((Math.random() * 100) + 1);
     }
 
-    var newsfeedFunctions = {
-        newsfeed: ['Overlast op plein 2 - 12:00', 'Overlast op plein 1 - 14:00'],
-        addItems: function () {
-            for (var i = 0; i < newsfeedFunctions.newsfeed.length; i++) {
-               document.getElementById('newsfeed').innerHTML = '<span>'+newsfeedFunctions.newsfeed[i]+'</span>';
-            }
-        }
-    }
-
-    newsfeedFunctions.addItems();
-    
-    
     
     //init linechart
     var pleinChart = new Chart(ctx).Line(data, options);
