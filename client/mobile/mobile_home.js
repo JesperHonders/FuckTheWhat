@@ -1,9 +1,9 @@
-Template.home.helpers ({
+Template.mobile_home.helpers ({
   meldingen: function(){
     return Meldingen.find({});
   }
 })
 
-Template.home.onCreated(function bodyOnCreated() {
+Template.mobile_home.onCreated(function bodyOnCreated() {
   Meteor.subscribe('Meldingen');
 });

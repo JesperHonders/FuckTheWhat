@@ -14,3 +14,11 @@
 .pl_list_container {
 	display: flex;
 }
+.pl_item header {
+	border:1px solid red;	
+	
+}
+.pl_item header img {
+	max-width:100%;
+	max-height:100%;
+}
