@@ -4,4 +4,4 @@ Meteor.startup(() => {
 
 });
 
-PleinData.mqttConnect("mqtt://172.20.10.2", ["plein1/input/sound"], {});
+PleinData.mqttConnect("mqtt://iot.rovansteen.nl:1883", ["plein1/input/sound"], {insert: true});
