@@ -2,6 +2,9 @@ Meteor.publish('Pleinen', function pleinenPublication() {
   return Pleinen.find();
 });
 
+Meteor.publish("ftwimages", function(){ return Ftwimages.find(); });
+
+
 Meteor.publish('Events', function eventsPublication() {
   return Events.find();
 })
@@ -22,3 +25,4 @@ Meteor.publish('Meldingen', function meldingenPublication() {
 // 	name: "Mariotteplein",
 // 	image: "plein3.png"
 // })
+
