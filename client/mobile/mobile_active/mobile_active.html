@@ -6,11 +6,12 @@
       {{#each meldingen}}
         {{#if isActive}}
           {{#unless isDone}}
+          <a href="/mobile/detail/{{_id}}">
             <div>
               <span>{{name}}</span>
               <span>{{time}}</span>
-              <button class="move" data-id="{{_id}}">Go</button>
             </div>
+          </a>
           {{/unless}}
         {{/if}}
       {{/each}}

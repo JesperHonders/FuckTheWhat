@@ -6,15 +6,16 @@ Template.mobile_detail.helpers ({
 
 Template.mobile_detail.onCreated(function bodyOnCreated() {
   Meteor.subscribe('Meldingen');
+  console.log(this.id);
 });
 
 Template.mobile_detail.events ({
-     
+
   'submit .add-complaint': function(event, template){
           event.preventDefault();
           var complaint = event.target.textarea.value;
           var disturbanceRadio = template.find('input:radio[name=radio]:checked');
-          
+
           var disturbanceLevel = 'Niet ingevuld';
 
           if(disturbanceRadio != null){
@@ -23,9 +24,9 @@ Template.mobile_detail.events ({
             if (complaint == null) {
                 complaint = 'Geen commentaar';
             }
-          
-          
-          Meteor.call('addNotification', disturbanceLevel, complaint);
-  } 
-    
+
+
+          Meteor.call('addLog', id, disturbanceLevel, complaint);
+  }
+
 });
