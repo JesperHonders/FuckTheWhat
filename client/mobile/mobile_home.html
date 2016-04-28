@@ -9,7 +9,7 @@
         {{else}}
         <a href="" data-id="{{_id}}">
           <div class="melding">
-            <h3>{{time}}</h3>
+            <h3>{{unixToTime time}}</h3>
             <h2>{{name}}</h2>
           </div>
         </a>
@@ -18,7 +18,7 @@
     </section>
     <footer class="mobile_footer">
       <a href="mobile"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
-      <a href="mobile/active"><i class="fa fa-check-circle" aria-hidden="true"></i></a>
+      <a href="/mobile/active"><i class="fa fa-check-circle" aria-hidden="true"></i></a>
     </footer>
   </main>
 </template>
