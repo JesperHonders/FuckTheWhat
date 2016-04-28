@@ -24,7 +24,7 @@ footer.mobile_footer a:hover {
 }
 
 footer.mobile_footer a:first-child {
-	border-right: 1px solid rgba(255,255,255,.2);;
+	border-right: 1px solid rgba(255,255,255,.2);
 }
 
 .melding {
@@ -34,9 +34,22 @@ footer.mobile_footer a:first-child {
 	color: white;
 	display: flex;
 	padding: 1em 2em;
+	width: 100%;
 }
 
 .melding h2, .melding h3 {
 	margin: 0;
 	padding: 0;
+}
+
+.melding h3 {
+	border-right: 1px solid rgba(255,255,255,.2);
+	padding-right: 1em;
+	margin-right: 1em;
+	margin-top:3px;
+}
+
+main.wrapper {
+	padding: 0 2em;
+	width: 100%;
 }

@@ -11,7 +11,6 @@
 
 body {
   margin: 0;
-  padding: 0 0 0 220px;
   display: flex;
   flex-wrap: wrap;
   background: #F3F3F4!important;
@@ -21,6 +20,7 @@ body {
 
 main#dash_yield {
   margin-left: 2em;
+  padding: 0 0 0 220px;
 }
 
 a {
@@ -128,6 +128,7 @@ a:hover {
   -ms-transition: all .2s ease-in;
   -o-transition: all .2s ease-in;
   transition: all .2s ease-in;
+  margin: 1em 0;
 }
 
 #charts_datepicker button:hover, #charts_datepicker button.active {
