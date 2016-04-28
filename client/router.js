@@ -37,9 +37,12 @@ Router.route('/mobile', function () {
   this.render('mobile_home');
 });
 
-Router.route('/mobile/active', function () {
-  this.layout('mobile_active');
-  this.render('mobile_active');
+Router.route('/mobile/detail/:_id', function () {
+  this.render('mobile_detail', {
+    data: function () {
+      return id = this.params._id
+    }
+  });
 });
 
 Router.route('/plein/:_id', function () {
