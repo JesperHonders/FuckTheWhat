@@ -14,14 +14,9 @@ Template.mobile_detail.events ({
           event.preventDefault();
           var complaint = event.target.textarea.value;
           var disturbanceRadio = template.find('input:radio[name=radio]:checked');
-          var recognizeCheckbox = template.find('input:checkbox[name=checkbox]:checked');
           
-          var disturbanceLevel = 'Leeg';
-          var recognized = false;
-          
-          if(recognizeCheckbox != null){
-              recognized = true;
-          }
+          var disturbanceLevel = 'Niet ingevuld';
+
           if(disturbanceRadio != null){
               disturbanceLevel = disturbanceRadio.getAttribute('data-disturbancelevel');
           }
@@ -30,9 +25,7 @@ Template.mobile_detail.events ({
             }
           
           
-          //Meteor.call('Something', disturbanceLevel, recognized, complaint);
-                    console.log(disturbanceLevel, recognized, complaint);
-
+          Meteor.call('addNotification', disturbanceLevel, complaint);
   } 
     
 });

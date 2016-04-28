@@ -8,13 +8,22 @@
       <span>{{meldingen.time}}</span>
       <form class="add-complaint">
           <div>
-              <input type="radio" name="radio" data-disturbancelevel="low">Laag
-              <input type="radio" name="radio" data-disturbancelevel="medium">Gemiddeld
-              <input type="radio" name="radio" data-disturbancelevel="high">Hoog
+              <label for="low">
+                <img src="/img/smiley_unhappy.svg" alt="Niet goed">
+              </label>
+              <input type="radio" name="radio" data-disturbancelevel="low" id='low'>
+
+              <label for="mid">
+                <img src="/img/smiley_normal.svg" alt="Oke">
+              </label>
+              <input type="radio" name="radio" data-disturbancelevel="medium" id='mid'>
+
+              <label for="high">
+                <img src="/img/smiley_happy.svg" alt="Goed">
+              </label>
+              <input type="radio" name="radio" data-disturbancelevel="high" id='high'>
           </div>
-          <div>
-              <input name="checkbox" type="checkbox"><span>Ik herkende ze</span>
-          </div>
+
 
           <input name="textarea" type="textarea" placeholder="Geklets">
           <div>
