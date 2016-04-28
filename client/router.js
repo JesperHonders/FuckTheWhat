@@ -1,17 +1,35 @@
 Router.configure({
-  layoutTemplate: 'dashboard'
+ 	layoutTemplate: 'dashboard'
 });
 
-Router.route('/', function () {
-  this.render('home');
+Router.route('/',  {
+  	waitOn: function () {
+ 		return Meteor.subscribe('ftwimages');
+ 	}, 
+ 	action:function () {
+ 		if (this.ready()) {
+ 			this.render('home');
+ 		} else {
+ 			this.render('loading');
+ 		}
+ 	} 
 });
 
 Router.route('/pleinen', function () {
   this.render('plein_list');
 });
 
-Router.route('/settings', function () {
-  this.render('settings');
+Router.route('/settings', {
+	waitOn: function () {
+ 		return Meteor.subscribe('ftwimages');
+ 	}, 
+ 	action:function () {
+ 		if (this.ready()) {
+ 			this.render('settings');
+ 		} else {
+ 			this.render('loading');
+ 		}
+ 	}
 });
 
 Router.route('/plein/:_id', function () {

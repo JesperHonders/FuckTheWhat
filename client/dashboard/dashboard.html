@@ -4,11 +4,19 @@
   </header> -->
   <aside id="dash_aside">
     <div id="dash_profile">
-
-      <img id="dash_profile_image" src="/img/janneke.jpg" alt="Janneke Uitterhoeve"/>
+      {{#if currentUser.profile.image}}
+        {{#with images}}
+          <img id="dash_profile_image" src={{this.url}} alt="profimg">
+        {{/with}}
+      {{else}}
+        <img id="dash_profile_image" src="/img/user.png" alt="Janneke Uitterhoeve"/>
+      {{/if}}
       {{> loginButtons}}
-      <strong id="dash_profile_name">Janneke Uitterhoeve</strong>
-      <span id="dash_profile_function">Programma coördinator</span>
+      {{#if currentUser.profile.titel}}
+        <span id="dash_profile_function">{{currentUser.profile.titel}}</span>
+      {{else}}
+        <span id="dash_profile_function">Medewerker</span>
+      {{/if}}
     </div>
     <nav id="dash_menu">
       <ul>
