@@ -1,6 +1,10 @@
 Template.mobile_home.helpers ({
   meldingen: function(){
     return Meldingen.find({});
+  },
+
+  unixToTime: function(timestamp) {
+    return moment(timestamp).format("HH:mm")
   }
 })
 

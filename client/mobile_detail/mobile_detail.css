@@ -1,0 +1,57 @@
+.mobile_container {
+	border:1px solid red;
+	padding:.5em 1em;
+	
+}
+.mobile_container header {
+	margin:1.5em 0;
+}
+.mobile_container header h1 {
+	font-size:2.2em;
+	display:inline-block;
+	margin: 00;
+}
+.mobile_container header span {
+	float:right;
+	font-size:1em ;
+	line-height:2.2em;
+	
+}
+.mobile_container p {
+	padding:.5em 0;
+}
+.mobile_container form  {
+	border-top: 1px solid #e7eaec;
+	
+}
+#checkbox_container {
+	border-top: 1px solid #e7eaec;
+	margin-top:.5em;
+	padding:.5em 0;
+}
+.mobile_container form input[type='radio'] {
+	display:none;
+	
+}
+.mobile_container form input[type='checkbox'] {
+	width:1em;
+	background-color:red !important;
+	border:none !important;
+	font-size:1em !important;
+}
+.mobile_container form #smiley {
+	background-color:white;
+	padding:.7em;
+	transition:.2s ease-in-out;
+}
+.mobile_container label svg {
+	max-width:7em;
+	transition:fill .2s ease-in-out;
+}
+.mobile_container form input[type="radio"]:checked + #smiley {
+	background-color:#19aa8d;
+}
+.mobile_container form input[type="radio"]:checked + #smiley svg {
+	fill:white;
+	stroke-color:white;
+}

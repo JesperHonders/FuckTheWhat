@@ -1,21 +1,24 @@
 <template name="mobile_home">
-  <section class="mobile_container">
-    <header>
-      <h1>Meldingen</h1>
-    </header>
-    {{#each meldingen}}
-      {{#if isActive}}
-      {{else}}
-      <div class="melding">
-        <h3>{{time}}</h3>
-        <h2>{{name}}</h2>
-        <button class="move" data-id="{{_id}}">Go</button>
-      </div>
-      {{/if}}
-    {{/each}}
-  </section>
-  <footer class="mobile_footer">
-    <a href="mobile"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
-    <a href="mobile/detail/{{_id}}"><i class="fa fa-check-circle" aria-hidden="true"></i></a>
-  </footer>
+  <main class="wrapper">
+    <section class="mobile_container">
+      <header>
+        <h1>Meldingen</h1>
+      </header>
+      {{#each meldingen}}
+        {{#if isActive}}
+        {{else}}
+        <a class="move" href="" data-id="{{_id}}">
+          <div class="melding">
+            <h3>{{unixToTime time}}</h3>
+            <h2>{{name}}</h2>
+          </div>
+        </a>
+        {{/if}}
+      {{/each}}
+    </section>
+    <footer class="mobile_footer">
+      <a href="mobile"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
+      <a href="/mobile/active"><i class="fa fa-check-circle" aria-hidden="true"></i></a>
+    </footer>
+  </main>
 </template>

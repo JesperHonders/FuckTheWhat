@@ -1,22 +1,25 @@
 <template name="mobile_active">
-    <main class="mobile_container">
+  <main class="mobile_container">
+    <section class="mobile_container">
       <header>
-        <h1>Mobile dingest</h1>
+        <h1>Afgeronde meldingen</h1>
       </header>
       {{#each meldingen}}
         {{#if isActive}}
           {{#unless isDone}}
-            <div>
-              <span>{{name}}</span>
-              <span>{{time}}</span>
-              <button class="move" data-id="{{_id}}">Go</button>
+          <a href="/mobile/detail/{{_id}}">
+            <div class="melding">
+              <h3>{{unixToTime time}}</h3>
+              <h2>{{name}}</h2>
             </div>
+          </a>
           {{/unless}}
         {{/if}}
       {{/each}}
-    </main>
-    <footer>
-      <a href="/mobile">Meldingen</a>
-      <a href="/mobile/active">Mee bezig</a>
+    </section>
+    <footer class="mobile_footer">
+      <a href="mobile"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
+      <a href="/mobile/active"><i class="fa fa-check-circle" aria-hidden="true"></i></a>
     </footer>
+  </main>
 </template>

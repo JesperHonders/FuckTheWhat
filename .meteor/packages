@@ -29,3 +29,4 @@ cfs:gridfs
 twbs:bootstrap
 perak:mqtt-collection
 matb33:collection-hooks
+momentjs:moment
