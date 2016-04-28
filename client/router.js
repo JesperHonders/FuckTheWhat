@@ -14,6 +14,10 @@ Router.route('/settings', function () {
   this.render('settings');
 });
 
+Router.route('/mobile', function () {
+  this.layout('mobile_home');
+});
+
 Router.route('/plein/:_id', function () {
   this.render('plein_detail', {
     data: function () {
