@@ -4,19 +4,16 @@ Template.mobile_home.helpers ({
   }
 })
 
-Template.home.rendered = function () {
-
-    Meteor.subscribe('PleinData');
-    
+Template.home.rendered = function () {    
     
     var chartFunctions = {
         addData: function(pleinnumber){
             
                 //fill in apiData here based on which sensor is called
-                var data;
-                var apiData = PleinData.find().fetch();
-                for (var i; i < apiData.length && i < 25; i++) {
-                    data.push(apiData[i]);
+                var data = [];
+                var apiData = PleinData.find({plein:"plein1"}).fetch();
+                for (var i = apiData.length - 1; i > apiData.length - 25; i--) {
+                    data.push(apiData[i].value);
                 }
                 return data;
         },
@@ -96,27 +93,30 @@ Template.home.rendered = function () {
     //set data - replace the random() function with api data later
     var data = {
         labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
-        datasets: [{
-                label: "Plein 1",
-                fillColor: "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: chartFunctions.addData(1),
-                //data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
-            }, {
-                label: "Plein 2",
-                fillColor: "rgba(151,187,205, 0.2)",
-                strokeColor: "rgba(151,187,205,1)",
-                pointColor: "rgba(151,187,205,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: chartFunctions.addData(2),
-                //data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
-            }, {
+        datasets: [
+//            {
+//                label: "Plein 1",
+//                fillColor: "rgba(220,220,220,0.2)",
+//                strokeColor: "rgba(220,220,220,1)",
+//                pointColor: "rgba(220,220,220,1)",
+//                pointStrokeColor: "#fff",
+//                pointHighlightFill: "#fff",
+//                pointHighlightStroke: "rgba(220,220,220,1)",
+//                data: chartFunctions.addData(1),
+//                //data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
+//            },
+//            {
+//                label: "Plein 2",
+//                fillColor: "rgba(151,187,205, 0.2)",
+//                strokeColor: "rgba(151,187,205,1)",
+//                pointColor: "rgba(151,187,205,1)",
+//                pointStrokeColor: "#fff",
+//                pointHighlightFill: "#fff",
+//                pointHighlightStroke: "rgba(220,220,220,1)",
+//                data: chartFunctions.addData(2),
+//                //data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
+//            }, 
+            {
                 label: "Plein 3",
                 fillColor: "rgba(151,187,205,0.2)",
                 strokeColor: "rgba(151,187,205,1)",
