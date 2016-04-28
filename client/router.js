@@ -1,16 +1,17 @@
 Router.configure({
- 	layoutTemplate: 'dashboard'
+ 	layoutTemplate: 'dashboard',
+  	loadingTemplate: 'loading'
 });
 
 Router.route('/',  {
   	waitOn: function () {
- 		return Meteor.subscribe('ftwimages');
+ 		return [Meteor.subscribe('ftwimages'),Meteor.subscribe('Meldingen'),Meteor.subscribe('PleinData')]
  	},
  	action:function () {
  		if (this.ready()) {
  			this.render('home');
  		} else {
- 			this.render('loading');
+ 			this.render('loadingTemplate');
  		}
  	}
 });
@@ -43,7 +44,7 @@ Router.route('/mobile/active', function () {
 });
 
 Router.route('/mobile/detail/:_id', function () {
-  
+  this.layout();
   this.render('mobile_detail', {
     data: function () {
       return id = this.params._id

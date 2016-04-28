@@ -1,4 +1,54 @@
-Template.home.rendered = function () {
+Template.mobile_home.helpers ({
+  pleinData: function(){
+    return PleinData.find({});
+  }
+})
+
+Template.home.rendered = function () {    
+    
+    var chartFunctions = {
+        addData: function(pleinnumber){
+            
+                //fill in apiData here based on which sensor is called
+                var data = [];
+                var apiData = PleinData.find({plein:"plein1"}).fetch();
+                for (var i = apiData.length - 1; i > apiData.length - 25; i--) {
+                    data.push(apiData[i].value);
+                }
+                return data;
+        },
+        //create click listener for checkboxes
+        showChart: function () {
+            
+            console.log();
+            var pleinCheckbox = document.querySelectorAll('[id*="plein_checkbox"]');
+            for (i = 0; i < pleinCheckbox.length; i++) {
+                pleinCheckbox[i].addEventListener('click', function () {
+                    //take last digit of id for selected line
+                    var selectedLine = this.id.substr(-1);
+                    //check if checked
+                    if (this.checked == true) {
+                        data.datasets[selectedLine] = {};
+
+                        pleinChart.destroy();
+                        pleinChart = new Chart(ctx).Line(data, options);
+                        //if not checked add old data
+                    } else {
+                        data.datasets[selectedLine] = sensorData;
+                        pleinChart.destroy();
+                        pleinChart = new Chart(ctx).Line(data, options);
+                    }
+                });
+            }
+        },
+        //add new value and (optionally) delete the first value
+        updateChart: function () {
+            if (data.datasets[0].data.length > 23) {
+                pleinChart.removeData();
+            }
+            pleinChart.addData()
+        },
+    }
 
     //setting canvas to var
     var ctx = document.getElementById("plein_chart").getContext("2d");
@@ -43,27 +93,30 @@ Template.home.rendered = function () {
     //set data - replace the random() function with api data later
     var data = {
         labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
-        datasets: [{
-                label: "Plein 1",
-                fillColor: "rgba(220,220,220,0.2)",
-                strokeColor: "rgba(220,220,220,1)",
-                pointColor: "rgba(220,220,220,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                //data: chartFunctions.addData(1);
-                data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
-            }, {
-                label: "Plein 2",
-                fillColor: "rgba(151,187,205, 0.2)",
-                strokeColor: "rgba(151,187,205,1)",
-                pointColor: "rgba(151,187,205,1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                //data: chartFunctions.addData(2);
-                data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
-            }, {
+        datasets: [
+//            {
+//                label: "Plein 1",
+//                fillColor: "rgba(220,220,220,0.2)",
+//                strokeColor: "rgba(220,220,220,1)",
+//                pointColor: "rgba(220,220,220,1)",
+//                pointStrokeColor: "#fff",
+//                pointHighlightFill: "#fff",
+//                pointHighlightStroke: "rgba(220,220,220,1)",
+//                data: chartFunctions.addData(1),
+//                //data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
+//            },
+//            {
+//                label: "Plein 2",
+//                fillColor: "rgba(151,187,205, 0.2)",
+//                strokeColor: "rgba(151,187,205,1)",
+//                pointColor: "rgba(151,187,205,1)",
+//                pointStrokeColor: "#fff",
+//                pointHighlightFill: "#fff",
+//                pointHighlightStroke: "rgba(220,220,220,1)",
+//                data: chartFunctions.addData(2),
+//                //data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
+//            }, 
+            {
                 label: "Plein 3",
                 fillColor: "rgba(151,187,205,0.2)",
                 strokeColor: "rgba(151,187,205,1)",
@@ -71,8 +124,8 @@ Template.home.rendered = function () {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(151,187,205,1)",
-                //data: chartFunctions.addData(3);
-                data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
+                data: chartFunctions.addData(3),
+                //data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
             }]
     };
 
@@ -90,47 +143,6 @@ Template.home.rendered = function () {
         data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
     };
 
-    var chartFunctions = {
-        addData: function(sensor){
-                //fill in apiData here based on which sensor is called
-                var data;
-                var apiData;
-                for (var i; i < apiData.length; i++) {
-                    chartFunctions.data.push(apiData[i]);
-                }
-                return data
-        },
-        //create click listener for checkboxes
-        showChart: function () {
-            var pleinCheckbox = document.querySelectorAll('[id*="plein_checkbox"]');
-            for (i = 0; i < pleinCheckbox.length; i++) {
-                pleinCheckbox[i].addEventListener('click', function () {
-                    //take last digit of id for selected line
-                    var selectedLine = this.id.substr(-1);
-                    //check if checked
-                    if (this.checked == true) {
-                        data.datasets[selectedLine] = {};
-
-                        pleinChart.destroy();
-                        pleinChart = new Chart(ctx).Line(data, options);
-                        //if not checked add old data
-                    } else {
-                        data.datasets[selectedLine] = sensorData;
-                        pleinChart.destroy();
-                        pleinChart = new Chart(ctx).Line(data, options);
-                    }
-                });
-            }
-        },
-        //add new value and (optionally) delete the first value
-        updateChart: function () {
-            if (data.datasets[0].data.length > 23) {
-                pleinChart.removeData();
-            }
-            pleinChart.addData()
-        },
-    }
-
     chartFunctions.showChart();
 
     //random number for testdata, can make an api call out of this
@@ -142,3 +154,7 @@ Template.home.rendered = function () {
     //init linechart
     var pleinChart = new Chart(ctx).Line(data, options);
 };
+
+Template.mobile_home.events ({
+
+});

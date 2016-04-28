@@ -1,10 +1,6 @@
 Template.home.helpers ({
   meldingen: function(){
-    return Meldingen.find({});
+    return Meldingen.find({status: "done"});
   }
 })
 
-Template.home.onCreated(function bodyOnCreated() {
-  Meteor.subscribe('Meldingen');
-  Meteor.subscribe('PleinData');
-});

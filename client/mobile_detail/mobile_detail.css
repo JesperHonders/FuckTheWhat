@@ -1,6 +1,8 @@
 .mobile_container {
-	border:1px solid red;
+	
 	padding:.5em 1em;
+	max-width:40em;
+	margin: 0 auto;
 	
 }
 .mobile_container header {
@@ -19,6 +21,7 @@
 }
 .mobile_container p {
 	padding:.5em 0;
+	flex-basis:100%;
 }
 .mobile_container form  {
 	border-top: 1px solid #e7eaec;
@@ -28,24 +31,68 @@
 	border-top: 1px solid #e7eaec;
 	margin-top:.5em;
 	padding:.5em 0;
+	border-bottom: 1px solid #e7eaec;
 }
 .mobile_container form input[type='radio'] {
 	display:none;
 	
 }
-.mobile_container form input[type='checkbox'] {
-	width:1em;
-	background-color:red !important;
-	border:none !important;
-	font-size:1em !important;
+#checkbox_container {
+	padding:.5em;
+
+}
+#checkbox_container input[type='checkbox'] {
+	
+}
+.mobile_container #checkbox_container input[type='checkbox']:after {
+	content: ' ';
+	display:inline-block;
+	width:1.5em;
+	height:1.5em;
+	margin-top:-.2em;
+	border:1.5px solid lightgrey;
+	background:white;
+	border-radius:5px;
+	
+}
+.smiley-form  {
+	
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+	
+}
+.smiley-form label {
+	flex-basis:30%;
+	text-align:center;
+	margin:0 .5em;
+}
+.mobile_container #checkbox_container label {
+	padding-left:1em;
+	
+}
+.mobile_container input[type='submit'] {
+	background-color:#19aa8d;
+	color:white;
+	padding:.5em;
+	width:100%;
+	margin-top: 1em;
+	border:none;
+}
+.mobile_container textarea {
+	background:white;
+	width:100%;
+	border:none;
+	padding:.5em;
+	margin-top:1em;
 }
 .mobile_container form #smiley {
 	background-color:white;
-	padding:.7em;
+	padding:.5em 1em;
 	transition:.2s ease-in-out;
 }
 .mobile_container label svg {
-	max-width:7em;
+	max-width:5em;
 	transition:fill .2s ease-in-out;
 }
 .mobile_container form input[type="radio"]:checked + #smiley {
