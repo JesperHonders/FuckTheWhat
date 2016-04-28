@@ -19,12 +19,14 @@
     </section>
     
     <aside id="newsfeed">
-      <h2>Newsfeed</h2>
-      {{#each meldingen}}
-        {{name}}
-        {{time}}
-        <br />
-      {{/each}}
+        <h2>Newsfeed</h2>
+        <ul>
+          {{#each meldingen}}
+          <li>
+            {{name}} <span>{{time}} </span>
+          </li>
+          {{/each}}
+        </ul>
     </aside>
 
 </template>

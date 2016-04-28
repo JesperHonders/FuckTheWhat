@@ -161,3 +161,54 @@ button#chart_datepicker {
         max-width:800px;
     }
 }
+
+.submit-title input.text {
+  padding: .2em .4em;
+  border: 1px solid #e5e6e7;
+}
+
+.submit-title label {
+  display: block;
+}
+
+.submit-title input {
+  margin-bottom: 2em;
+}
+
+.button {
+  background: #1ab394;
+  color: #fff;
+  border: none;
+  padding: .5em 1em;
+  border-radius: 3px;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -ms-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+.button:hover {
+  background: #148f76;
+}
+
+#newsfeed ul li {
+  
+  flex-basis: 25% ;
+  background: white;
+  padding: 1em;
+  border-top: 5px solid #e7eaec;
+  -webkit-box-shadow: 0 0 20px 10px rgba(0,0,0,.05);
+  box-shadow: 0 0 10px 5px rgba(0,0,0,.01);
+  margin-top:1em;
+  
+  transition:all .2s;
+}
+
+#newsfeed ul {
+    list-style: none;
+    padding: 0 0;
+
+}
+
+
