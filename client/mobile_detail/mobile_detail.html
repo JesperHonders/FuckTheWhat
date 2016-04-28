@@ -1,0 +1,30 @@
+<template name="mobile_detail">
+  <main class="mobile_container">
+    <header>
+      <h1></h1>
+    </header>
+    {{meldingen.name}}
+    <div class="mobile_container_detail">
+      <span>{{meldingen.time}}</span>
+      <form class="add-complaint">
+          <div>
+              <input type="radio" name="radio" data-disturbancelevel="low">Laag
+              <input type="radio" name="radio" data-disturbancelevel="medium">Gemiddeld
+              <input type="radio" name="radio" data-disturbancelevel="high">Hoog
+          </div>
+          <div>
+              <input name="checkbox" type="checkbox"><span>Ik herkende ze</span>
+          </div>
+
+          <input name="textarea" type="textarea" placeholder="Geklets">
+          <div>
+              <input type="submit" href="/mobile">
+          </div>
+      </form>
+    </div>
+  </main>
+  <footer>
+<a>!</a>
+<a>Mee bezig</a>
+  </footer>
+</template>
