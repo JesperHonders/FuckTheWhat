@@ -1,6 +1,6 @@
 Template.mobile_active.helpers ({
   meldingen: function(){
-    return Meldingen.find({});
+    return Meldingen.find({status: "active"});
   }
 })
 

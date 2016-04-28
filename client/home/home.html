@@ -17,13 +17,14 @@
             <input id="plein_checkbox2" type="checkbox"/> <label for="plein_checkbox2">Plein 3</label>
         </section>
     </section>
-    
+
     <aside id="newsfeed">
       <h2>Newsfeed</h2>
       {{#each meldingen}}
         {{name}}
-        {{time}}
-        <br />
+        {{unixToTime time}}
+        {{complaint}}
+        {{disturbance}}
       {{/each}}
     </aside>
 
