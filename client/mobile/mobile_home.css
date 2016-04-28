@@ -1,0 +1,42 @@
+footer.mobile_footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: #2F4050;
+	text-align: center;
+	padding: .5em 0;
+	font-size: 300%;
+}
+
+footer.mobile_footer a {
+	color: #a7b1c2;
+	-webkit-transition: all .2s ease-in;
+	-moz-transition: all .2s ease-in;
+	-ms-transition: all .2s ease-in;
+	-o-transition: all .2s ease-in;
+	transition: all .2s ease-in;
+	padding: 0 1em;	
+}
+
+footer.mobile_footer a:hover {
+	color: white;
+}
+
+footer.mobile_footer a:first-child {
+	border-right: 1px solid rgba(255,255,255,.2);;
+}
+
+.melding {
+	border-radius: 1em;
+	background: #d9534f;
+	border: 1px solid #d43f3a;
+	color: white;
+	display: flex;
+	padding: 1em 2em;
+}
+
+.melding h2, .melding h3 {
+	margin: 0;
+	padding: 0;
+}

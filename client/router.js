@@ -38,6 +38,7 @@ Router.route('/mobile', function () {
 });
 
 Router.route('/mobile/detail/:_id', function () {
+  this.layout('mobile_detail');
   this.render('mobile_detail', {
     data: function () {
       return id = this.params._id
