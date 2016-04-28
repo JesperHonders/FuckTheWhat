@@ -1,5 +1,20 @@
-Meteor.publish('Pleinen', function pleinenPublication() {
-  return Pleinen.find();
+Meteor.publish('Pleinen', function () {
+	
+	if (Pleinen.find().count()<=0) {
+		Pleinen.insert({
+			name: "Beukenweg",
+			image: "plein1.png"
+		})
+		Pleinen.insert({
+			name: "Steve Bikoplein",
+			image: "plein2.png"
+		})
+		Pleinen.insert({
+			name: "Mariotteplein",
+			image: "plein3.png"
+		})
+	}
+  	return Pleinen.find();
 });
 
 Meteor.publish("ftwimages", function(){ return Ftwimages.find(); });
@@ -13,16 +28,6 @@ Meteor.publish('Meldingen', function meldingenPublication() {
   return Meldingen.find();
 })
 
-// db.Pleinen.insert({
-// 	name: "Beukenweg",
-// 	image: "plein1.png"
-// })
-// db.Pleinen.insert({
-// 	name: "Steve Bikoplein",
-// 	image: "plein2.png"
-// })
-// db.Pleinen.insert({
-// 	name: "Mariotteplein",
-// 	image: "plein3.png"
-// })
+
+
 
