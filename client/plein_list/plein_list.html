@@ -1,20 +1,16 @@
 <template name="plein_list">
   <h1>Pleinen</h1>
-  <div class="container">
-    <div class="row">
+  <section class="pl_list_container">
       {{#each Pleinen}}
-        <div class="col-md-4">
-        <div class="col-md-12 pl_item">
+        <article class="pl_item">
           <a href="plein/{{_id}}">
             <header>
               <img src="../img/{{image}}" />
             </header>
             <h1>{{name}}</h1>
           </a>
-        </div>
-        </div>
+        </article>
       {{/each}}
-    </div>
-  </div>
+  </section>
 
 </template>

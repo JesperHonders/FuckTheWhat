@@ -1,6 +1,7 @@
 <template name="plein_detail">
-  <header>
-    <img src="{{pleinen.image}}" />
+ <section class="template-plein_detail-wrapper">
+    <header>
+    <img src="../img/{{pleinen.image}}" />
   </header>
   <main>
     <h1>{{pleinen.name}}</h1>
@@ -12,20 +13,23 @@
 
   </section>
   <section id="pl_events">
+  <h3>Gebeurtenissen op de {{pleinen.name}}</h3>
+  <p>Voer hier onder de acties van de gemeente op de {{pleinen.name}} in. Denk hier bij aan het plaatsen van bankjes of een buurt BBQ </p>
     <form class="add-event">
-      <input name="name" type="text" placeholder="Event name" />
-      <input name="date" type="date"/>
+      <input name="name" type="text" placeholder="Event name" required />
+      <input name="date" type="date" required/>
       <input type="submit" value="+" />
     </form>
     <ul>
       {{#each events}}
       <li>
-        {{date}} {{name}}
+        {{name}} <span>{{date}} </span>
       </li>
       {{/each}}
     </ul>
   </section>
   </main>
+ </section>
 
 
 </template>
