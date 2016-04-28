@@ -1,7 +1,26 @@
+.pl_list_container {
+	display: flex;
+	flex-wrap:wrap;
+	justify-content:flex-start;
+}
 .pl_item {
+	flex-basis: 25% ;
 	background: white;
-	padding-top: 15px;
+	padding: 1em;
 	border-top: 5px solid #e7eaec;
 	-webkit-box-shadow: 0 0 20px 10px rgba(0,0,0,.05);
 	box-shadow: 0 0 10px 5px rgba(0,0,0,.01);
+	margin-right:2em;
+}
+.pl_item h1 {
+	font-size:2em;
+	margin-top:.5em;
+}
+.pl_item img {
+	width: 100%;
+}
+
+.pl_item header img {
+	max-width:100%;
+	max-height:100%;
 }
