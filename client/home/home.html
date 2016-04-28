@@ -1,25 +1,25 @@
 <template name="home">
 
-    <div class="container">
-        <main>
-            <section id="charts_datepicker">
-                <button id="chart_day">Dag</button>
-                <button id="chart_week">Week</button>
-                <button id="chart_year">Jaar</button>
-                <button id="chart_datepicker">Icon</button>
-            </section>
-            
-            <canvas id="plein_chart" width="1000" height="400"></canvas>
-            
-            <section id="charts_checkboxes">
-                <input id="plein_checkbox0" type="checkbox"/> Plein 1
-                <input id="plein_checkbox1" type="checkbox"/> Plein 2
-                <input id="plein_checkbox2" type="checkbox"/> Plein 3
-            </section>
-        </main>
-        <aside id="newsfeed">
-            <h2>Newsfeed</h2>
-        </aside>
-    </div>
+    <h1>Dashboard</h1>
+
+    <section>
+        <section id="charts_datepicker">
+            <button id="chart_day" class="active">Dag</button>
+            <button id="chart_week">Week</button>
+            <button id="chart_year">Jaar</button>
+            <button id="chart_datepicker"><i class="fa fa-calendar" aria-hidden="true"></i></button>
+        </section>
+        
+        <canvas id="plein_chart" width="1000" height="400"></canvas>
+        
+        <section id="charts_checkboxes">
+            <input id="plein_checkbox0" type="checkbox"/> Plein 1
+            <input id="plein_checkbox1" type="checkbox"/> Plein 2
+            <input id="plein_checkbox2" type="checkbox"/> Plein 3
+        </section>
+    </section>
+    <aside id="newsfeed">
+        <h2>Newsfeed</h2>
+    </aside>
 
 </template>

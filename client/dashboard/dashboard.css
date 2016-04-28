@@ -11,11 +11,16 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 0 0 220px;
   display: flex;
   flex-wrap: wrap;
   background: #F3F3F4!important;
 
+
+}
+
+main {
+  margin-left: 2em;
 }
 
 a {
@@ -66,6 +71,8 @@ a:hover {
   width: 220px;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
+  position:fixed;
+  left:0;
 }
 
 #dash_menu ul {
@@ -101,20 +108,35 @@ a:hover {
   min-width: 16px;
 }
 
-#dash_yield {
-  margin-left: 1em;
-}
-
 #plein_chart{
     max-height:400px;
     max-width:800px;
 }
 
-.container{
-    display:flex;
-    width:100%;
-}
-
 #newsfeed{
     margin-left:1em;
 }
+
+#charts_datepicker button {
+  background: #d1dade;
+  color: #5e5e5e;
+  border: none;
+  padding: .5em 1em;
+  border-radius: 3px;
+  -webkit-transition: all .2s ease-in;
+  -moz-transition: all .2s ease-in;
+  -ms-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+}
+
+#charts_datepicker button:hover, #charts_datepicker button.active {
+  background: #1ab394;
+  color: #fff;
+}
+
+button#chart_datepicker {
+  background: #1c84c6;
+  color: white;
+}
+
