@@ -1,16 +1,17 @@
 Router.configure({
- 	layoutTemplate: 'dashboard'
+ 	layoutTemplate: 'dashboard',
+  	loadingTemplate: 'loading'
 });
 
 Router.route('/',  {
   	waitOn: function () {
- 		return Meteor.subscribe('ftwimages');
+ 		return [Meteor.subscribe('ftwimages'),Meteor.subscribe('Meldingen'),Meteor.subscribe('PleinData')]
  	},
  	action:function () {
  		if (this.ready()) {
  			this.render('home');
  		} else {
- 			this.render('loading');
+ 			this.render('loadingTemplate');
  		}
  	}
 });
