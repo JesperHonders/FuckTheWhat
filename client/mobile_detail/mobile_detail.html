@@ -1,13 +1,10 @@
 <template name="mobile_detail">
   <main class="mobile_container">
     <header>
-      <h1>meldingen.name </h1> <span>time</span>
+      <h1>{{meldingen.name}} </h1> <span>{{unixToTime meldingen.time}}</span>
 
     </header>
-    {{meldingen.name}}
-
     <div class="mobile_container_detail">
-      <span>{{meldingen.time}}</span>
       <form class="add-complaint">
       <h2>Hoe ging het?</h2>
           <div class='smiley-form'>
@@ -84,14 +81,6 @@
 
             </label>
           </div>
-          
-          <div id='checkbox_container'>
-           
-              <input name="checkbox" type="checkbox" id='seenBefore'>
-                 <label for="seenBefore">Ik herkende ze</label>
-
-          </div>
-
           <textarea name="textarea" type="textarea" placeholder="Opmerkingen en extra info"></textarea>
           <div>
               <input type="submit" href="/mobile">
