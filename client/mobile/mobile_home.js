@@ -7,9 +7,9 @@ Template.mobile_home.helpers ({
 Template.mobile_home.events ({
   'click .move': function(event) {
   	event.preventDefault();
-  	var link = document.getElementById(this._id._str);
-    console.log( this._id, this.name, this.time)
-    link.classList.add('moveToActiveClass')
+  	console.log(event.currentTarget)
+  	
+    event.currentTarget.classList.add('moveToActiveClass')
     Meteor.setTimeout(() => {
     	Meteor.call('moveToActive', this._id, this.name, this.time)
     }, 200)
