@@ -12,8 +12,15 @@ Template.home.rendered = function () {
                 //fill in apiData here based on which sensor is called
                 var data = [];
                 var apiData = PleinData.find({plein:"plein1"}).fetch();
-                for (var i = apiData.length - 1; i > apiData.length - 25; i--) {
-                    data.push(apiData[i].value);
+                if (apiData[0] != undefined) {
+                    for (var i = apiData.length - 1; i > apiData.length - 25; i--) {
+                        data.push(apiData[i].value);
+                    }
+                }else{
+                    for (var i = 0; i < 25; i++) {
+                        data.push(random());
+                    }
+                    console.log('Fake data - Could not connect to API')
                 }
                 return data;
         },
@@ -28,13 +35,14 @@ Template.home.rendered = function () {
                     var selectedLine = this.id.substr(-1);
                     //check if checked
                     if (this.checked == true) {
-                        data.datasets[selectedLine] = {};
+                        var newData = data;
+                        newData.dataSets[selectedLine] = {};
 
                         pleinChart.destroy();
-                        pleinChart = new Chart(ctx).Line(data, options);
+                        pleinChart = new Chart(ctx).Line(newData, options);
                         //if not checked add old data
                     } else {
-                        data.datasets[selectedLine] = sensorData;
+                        //data.datasets[selectedLine] = sensorData;
                         pleinChart.destroy();
                         pleinChart = new Chart(ctx).Line(data, options);
                     }
@@ -129,19 +137,7 @@ Template.home.rendered = function () {
             }]
     };
 
-    
-    //old data for now, for some reason cant store the old var as it updates - need to get this out of collection?
-    var sensorData = {
-        label: "Plein 1",
-        fillColor: "rgba(220,220,220,0.2)",
-        strokeColor: "rgba(220,220,220,1)",
-        pointColor: "rgba(220,220,220,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(220,220,220,1)",
-        //data: chartFunctions.addData(3);
-        data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
-    };
+   
 
     chartFunctions.showChart();
 

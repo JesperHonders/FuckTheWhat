@@ -5,7 +5,7 @@ footer.mobile_footer {
 	width: 100%;
 	background: #2F4050;
 	text-align: center;
-	padding: .5em 0;
+	padding:.2em;
 	font-size: 300%;
 }
 
@@ -37,7 +37,9 @@ footer.mobile_footer a:first-child {
 	width: 100%;
 	margin-bottom: 1em;
 }
-
+.melding h2 {
+	font-size:1.8em
+}
 .melding h2, .melding h3 {
 	margin: 0;
 	padding: 0;
@@ -48,6 +50,7 @@ footer.mobile_footer a:first-child {
 	padding-right: 1em;
 	margin-right: 1em;
 	margin-top:3px;
+	font-size:1.5em;
 }
 
 main.wrapper {

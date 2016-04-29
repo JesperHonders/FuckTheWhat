@@ -3,6 +3,9 @@
     <section class="mobile_container">
       <header>
         <h1>Meldingen</h1>
+        <p>
+          Hieronder staan de meldingen in jou gebied. Druk op een melding om aan te geven dat je deze gaat behandelen.
+        </p>
       </header>
       {{#each meldingen}}
         <a class="move" href="" data-id="{{_id}}">
@@ -14,7 +17,7 @@
       {{/each}}
     </section>
     <footer class="mobile_footer">
-      <a href="mobile"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
+      <a href="/mobile"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i></a>
       <a href="/mobile/active"><i class="fa fa-check-circle" aria-hidden="true"></i></a>
     </footer>
   </main>

@@ -1,12 +1,12 @@
 Router.configure({
  	layoutTemplate: 'dashboard',
-  	loadingTemplate: 'loading'
+ 	loadingTemplate: 'loading'
 });
 
 Router.route('/',  {
 	name: "home",
   	waitOn: function () {
- 		return [Meteor.subscribe('ftwimages'),Meteor.subscribe('Meldingen'),Meteor.subscribe('PleinData')]
+ 		return [Meteor.subscribe('ftwimages'),Meteor.subscribe('Meldingen'),Meteor.subscribe('PleinData')];
  	},
  	action:function () {
  		this.render('home');
@@ -48,17 +48,17 @@ Router.route('/settings', {
 });
 
 Router.route('/mobile', function () {
-  this.layout('mobile_home');
+  this.layout();
   this.render('mobile_home');
 });
 
 Router.route('/mobile/active', function () {
-  this.layout('mobile_active');
+  this.layout();
   this.render('mobile_active');
 });
 
 Router.route('/mobile/detail/:_id', function () {
-  this.layout();
+  this.layout()
   this.render('mobile_detail', {
     data: function () {
       return id = this.params._id
