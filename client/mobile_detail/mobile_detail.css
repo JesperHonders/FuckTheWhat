@@ -130,3 +130,20 @@
 .low svg {
 	fill: #d9534f;
 }
+
+@media (max-width: 600px) {
+	.mobile_container form #smiley {
+		padding: 5px 10px;
+	}
+	.mobile_container label svg {
+		max-width: 3em;
+		max-height: 4em;
+	}
+	.smiley-form {
+		display: block;
+	}
+}
+
+.mobile_container {
+	margin-bottom: 100px;
+}
