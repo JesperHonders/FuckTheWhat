@@ -12,7 +12,7 @@ Template.registerHelper("color", function (disturbance) {
 		
 		return "#5cb85c"
 	}
-	else if (dist === 'MID') {
+	else if (dist === 'MEDIUM') {
 		return "#ec971f"
 	}
 	else if (dist === 'LOW') {
