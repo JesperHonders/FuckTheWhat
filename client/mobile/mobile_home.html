@@ -9,9 +9,10 @@
       </header>
       {{#each meldingen}}
         <a class="move" href="" data-id="{{_id}}">
-          <div class="melding">
+          <div class="melding" id={{_id._str}}>
             <h3>{{unixToTime time}}</h3>
             <h2>{{name}}</h2>
+            <i class="fa fa-circle-o" aria-hidden="true"></i>
           </div>
         </a>
       {{/each}}

@@ -33,9 +33,20 @@ footer.mobile_footer a:first-child {
 	border: 1px solid #d43f3a;
 	color: white;
 	display: flex;
+	flex-direction:row;
 	padding: 1em 2em;
 	width: 100%;
+	text-align:right;
 	margin-bottom: 1em;
+	position:relative;
+	opacity:1;
+	transition:all .2s ease-in-out;
+}
+.moveToActiveClass {
+	opacity:0;
+	-ms-transform: translate(50vw,0); /* IE 9 */
+    -webkit-transform: translate(50vw,0); /* Safari */
+    transform: translate(50vw,0); /* Standard syntax */
 }
 .melding h2 {
 	font-size:1.8em
@@ -45,6 +56,13 @@ footer.mobile_footer a:first-child {
 	padding: 0;
 }
 
+.melding i {
+	font-size:1.5em;
+	position:absolute;
+	right:1em;
+	top:30%;
+	bottom:30%;
+}
 .melding h3 {
 	border-right: 1px solid rgba(255,255,255,.2);
 	padding-right: 1em;

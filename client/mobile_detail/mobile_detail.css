@@ -52,8 +52,7 @@
 	margin-top:-.2em;
 	border:1.5px solid lightgrey;
 	background:white;
-	border-radius:5px;
-	
+	border-radius:5px;	
 }
 .smiley-form  {
 	
@@ -101,4 +100,20 @@
 .mobile_container form input[type="radio"]:checked + #smiley svg {
 	fill:white;
 	stroke-color:white;
+}
+
+.high {
+	background: #5cb85c;
+	border: 1px solid #4cae4c;
+	border-radius: .5em;
+}
+.mid {
+	background: #ec971f;
+	border: 1px solid #eb9316;
+	border-radius: .5em;
+}
+.low {
+	background: #d9534f;
+	border: 1px solid #d43f3a;
+	border-radius: .5em;
 }
