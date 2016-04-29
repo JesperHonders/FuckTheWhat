@@ -39,14 +39,18 @@ footer.mobile_footer a:first-child {
 	text-align:right;
 	margin-bottom: 1em;
 	position:relative;
+	
+}
+.move {
+	display:block;
 	opacity:1;
 	transition:all .2s ease-in-out;
 }
-.moveToActiveClass {
+.move.moveToActiveClass {
 	opacity:0;
-	-ms-transform: translate(50vw,0); /* IE 9 */
-    -webkit-transform: translate(50vw,0); /* Safari */
-    transform: translate(50vw,0); /* Standard syntax */
+	-ms-transform: translate(20vw,0); /* IE 9 */
+    -webkit-transform: translate(20vw,0); /* Safari */
+    transform: translate(20vw,0); /* Standard syntax */
 }
 .melding h2 {
 	font-size:1.8em
