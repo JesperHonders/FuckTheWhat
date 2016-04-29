@@ -14,8 +14,9 @@ Template.home.onCreated(function bodyOnCreated() {
   Meteor.subscribe('Events');
 });
 
-Template.home.rendered = function () {    
-    PleinData.find({plein: "plein1"}).observe({
+Template.home.rendered = function () {  
+    var curTime = Date.now();
+    PleinData.find({plein: "plein1", createdAt: {$gt: curTime}}).observe({
         added: function(){
             var data = PleinData.find({plein: "plein1"}).fetch();
             Meteor.chartFunctions.updateChart(data[data.length -1].value, data[data.length -1].createdAt);
