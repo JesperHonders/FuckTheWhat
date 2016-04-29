@@ -1,12 +1,15 @@
 Router.configure({
  	layoutTemplate: 'dashboard',
- 	loadingTemplate: 'loading'
+ 	loadingTemplate: 'loading',
+ 	waitOn: function () {
+ 		return [Meteor.subscribe('ftwimages')]
+ 	}
 });
 
 Router.route('/',  {
 	name: "home",
   	waitOn: function () {
- 		return [Meteor.subscribe('ftwimages'),Meteor.subscribe('Meldingen'),Meteor.subscribe('PleinData')];
+ 		return [Meteor.subscribe('Meldingen'),Meteor.subscribe('PleinData')];
  	},
  	action:function () {
  		this.render('home');
