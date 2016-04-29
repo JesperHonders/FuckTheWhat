@@ -12,12 +12,12 @@ PleinData.before.insert(function (userId, doc) {
   delete doc.message;
 });
 
-Meldingen.before.insert(function (doc) {
-  doc.createdAt = Date.now();
-  doc.plein = doc.topic.split("/")[0];
+Meldingen.before.insert(function (userId, doc) {
+  doc.name = doc.topic.split('/')[0]
+  doc.time = Date.now();
   doc.status = "unassigned";
-  doc.dynamic = "yes"
   delete doc.topic;
+  delete doc.message;
 });
 PleinData.mqttConnect("mqtt://iot.rovansteen.nl:1883", ["plein1/input/sound","plein2/input/sound"], {insert: true});
-Meldingen.mqttConnect("mqtt://iot.rovansteen.nl:1883", ["plein1/report", "plein2/report"], {insert: true});
+Meldingen.mqttConnect("mqtt://iot.rovansteen.nl:1883", ["plein1/report","plein2/report"], {insert: true});
