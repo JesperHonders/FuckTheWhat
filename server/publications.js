@@ -17,7 +17,15 @@ Meteor.publish('Pleinen', function () {
   	return Pleinen.find();
 });
 
-Meteor.publish("ftwimages", function(){ return Ftwimages.find(); });
+Meteor.publish("ftwimages", function(){ 
+	if (this.userId) {
+		var profileImg = Meteor.users.findOne(this.userId).profile.image;
+		console.log(profileImg);
+		return Ftwimages.find({_id:profileImg}); 
+	} else {
+		return [];
+	}
+});
 
 
 Meteor.publish('Events', function() {
