@@ -4,32 +4,46 @@ Router.configure({
 });
 
 Router.route('/',  {
+	name: "home",
   	waitOn: function () {
  		return [Meteor.subscribe('ftwimages'),Meteor.subscribe('Meldingen'),Meteor.subscribe('PleinData')]
  	},
  	action:function () {
- 		if (this.ready()) {
- 			this.render('home');
- 		} else {
- 			this.render('loadingTemplate');
- 		}
+ 		this.render('home');
  	}
 });
 
-Router.route('/pleinen', function () {
-  this.render('plein_list');
+Router.route('/pleinen',{
+	name: "pleinen",
+	waitOn: function(){
+		return Meteor.subscribe('Pleinen');
+	},
+	action:function () {
+  		this.render('plein_list');
+	} 
+});
+
+Router.route('/plein/:_id', {
+	name:"pleindetail",
+	waitOn: function() {
+		return [ Meteor.subscribe('Pleinen'),Meteor.subscribe('Events')]
+	},
+	action:function () {
+  		this.render('plein_detail', {
+   			data: function () {
+      			return id = this.params._id
+    		}
+  		});
+  	}
 });
 
 Router.route('/settings', {
+	name: "settings",
 	waitOn: function () {
  		return Meteor.subscribe('ftwimages');
  	},
  	action:function () {
- 		if (this.ready()) {
- 			this.render('settings');
- 		} else {
- 			this.render('loading');
- 		}
+ 		this.render('settings');
  	}
 });
 
@@ -52,10 +66,3 @@ Router.route('/mobile/detail/:_id', function () {
   });
 });
 
-Router.route('/plein/:_id', function () {
-  this.render('plein_detail', {
-    data: function () {
-      return id = this.params._id
-    }
-  });
-});

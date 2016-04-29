@@ -23,8 +23,3 @@ Template.plein_detail.events ({
   }
 })
 
-Template.plein_detail.onCreated(function bodyOnCreated() {
-  console.log(id)
-  Meteor.subscribe('Pleinen');
-  Meteor.subscribe('Events');
-});

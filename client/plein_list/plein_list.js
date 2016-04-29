@@ -5,6 +5,3 @@ Template.plein_list.helpers ({
 })
 
 
-Template.plein_list.onCreated(function bodyOnCreated() {
-  Meteor.subscribe('Pleinen');
-});
