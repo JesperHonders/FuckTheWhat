@@ -35,17 +35,17 @@ Template.home.rendered = function () {
 //                data: chartFunctions.addData(1),
 //                //data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
 //            },
-//            {
-//                label: "Plein 2",
-//                fillColor: "rgba(151,187,205, 0.2)",
-//                strokeColor: "rgba(151,187,205,1)",
-//                pointColor: "rgba(151,187,205,1)",
-//                pointStrokeColor: "#fff",
-//                pointHighlightFill: "#fff",
-//                pointHighlightStroke: "rgba(220,220,220,1)",
-//                data: chartFunctions.addData(2),
-//                //data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
-//            }, 
+            {
+                label: "Plein 2",
+                fillColor: "rgba(151,187,205, 0.2)",
+                strokeColor: "rgba(151,187,205,1)",
+                pointColor: "rgba(151,187,205,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: Meteor.chartFunctions.addData('plein2'),
+                //data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
+            }, 
             {
                 label: "Plein 1",
                 fillColor: "rgba(151,187,205,0.2)",
@@ -54,7 +54,7 @@ Template.home.rendered = function () {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(151,187,205,1)",
-                data: Meteor.chartFunctions.addData(1),
+                data: Meteor.chartFunctions.addData('plein1'),
             }]
     };
 

@@ -32,7 +32,7 @@ Template.plein_detail.rendered = function() {
 
     //set data - replace the random() function with api data later
     var data = {
-        labels: ["00", "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23"],
+        labels: Meteor.chartFunctions.addLabels(1),
         datasets: [
             {
                 label: "Plein 1",
@@ -42,7 +42,7 @@ Template.plein_detail.rendered = function() {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(151,187,205,1)",
-                data: Meteor.chartFunctions.addData(1),
+                data: Meteor.chartFunctions.addData('plein1'),
             }]
     };
 
