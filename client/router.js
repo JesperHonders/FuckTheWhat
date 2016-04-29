@@ -2,7 +2,7 @@ Router.configure({
  	layoutTemplate: 'dashboard',
  	loadingTemplate: 'loading',
  	waitOn: function () {
- 		return [Meteor.subscribe('ftwimages')]
+ 		return [Meteor.subscribe('ftwimages'),Meteor.subscribe('PleinData')]]
  	}
 });
 
