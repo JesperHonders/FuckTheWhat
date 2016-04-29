@@ -44,7 +44,7 @@ footer.mobile_footer a:first-child {
 .move {
 	display:block;
 	opacity:1;
-	transition:all .2s ease-in-out;
+	transition:all .3s ease-in-out;
 }
 .move.moveToActiveClass {
 	opacity:0;

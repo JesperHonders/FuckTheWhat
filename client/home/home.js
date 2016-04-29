@@ -1,6 +1,6 @@
 Template.home.helpers ({
   meldingen: function(){
-    return Meldingen.find({status: "done"}, {limit: 5});
+    return Meldingen.find({status: "active"}, {limit: 5});
   },
   events: function(){
     return Events.find({}, {limit: 5});
@@ -83,7 +83,8 @@ Template.home.rendered = function () {
 
 Template.home.events ({
   'click .meldingen' : function (event, target) {
-    var article = event.currentTarget.childNodes[9];
+    var article = event.currentTarget.childNodes[11];
+   
     event.currentTarget.classList.toggle('icon_turn');
     article.classList.toggle('article_show');
   }

@@ -16,6 +16,7 @@ Template.mobile_home.events ({
     }, 200)
 
 
+
   }
 })
 
