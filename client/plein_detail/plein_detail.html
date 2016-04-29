@@ -9,11 +9,16 @@
   <section id="pl_notification">
 
   </section>
+  
+    
+  <section id="pl_charts">
+        <canvas id="plein_detail_chart" width="1000" height="400"></canvas>
+  </section>
   <section id="pl_events">
   <h3>Gebeurtenissen op de {{pleinen.name}}</h3>
   <p>Voer hier onder de acties van de gemeente op de {{pleinen.name}} in. Denk hier bij aan het plaatsen van bankjes of een buurt BBQ </p>
     <form class="add-event">
-      <input name="name" type="text" placeholder="Event name" required />
+      <input name="name" type="text" placeholder="Gebeurtenis" required />
       <input name="date" type="date" required/>
       <input type="submit" value="+" />
     </form>
@@ -24,10 +29,6 @@
       </li>
       {{/each}}
     </ul>
-  </section>
-    
-  <section id="pl_charts">
-        <canvas id="plein_detail_chart" width="1000" height="400"></canvas>
   </section>
   </main>
  </section>
