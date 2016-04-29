@@ -5,16 +5,12 @@
         <h1>Afgeronde meldingen</h1>
       </header>
       {{#each meldingen}}
-        {{#if isActive}}
-          {{#unless isDone}}
           <a href="/mobile/detail/{{_id}}">
             <div class="melding">
               <h3>{{unixToTime time}}</h3>
               <h2>{{name}}</h2>
             </div>
           </a>
-          {{/unless}}
-        {{/if}}
       {{/each}}
     </section>
     <footer class="mobile_footer">

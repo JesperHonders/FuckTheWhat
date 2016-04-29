@@ -35,6 +35,7 @@ footer.mobile_footer a:first-child {
 	display: flex;
 	padding: 1em 2em;
 	width: 100%;
+	margin-bottom: 1em;
 }
 
 .melding h2, .melding h3 {

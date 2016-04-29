@@ -6,7 +6,8 @@ Template.mobile_detail.helpers ({
 
 Template.mobile_detail.onCreated(function bodyOnCreated() {
   Meteor.subscribe('Meldingen');
-  console.log(this.id);
+  debugger;
+  console.log(id);
 });
 
 Template.mobile_detail.events ({

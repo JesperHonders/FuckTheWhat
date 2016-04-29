@@ -13,7 +13,7 @@ PleinData.before.insert(function (userId, doc) {
 
 
   if(doc.value > 50) {
-    Meldingen.insert({name: doc.plein, time: doc.createdAt})
+    Meldingen.insert({name: doc.plein, time: doc.createdAt, status: "unassigned"})
   }
 });
 PleinData.mqttConnect("mqtt://iot.rovansteen.nl:1883", ["plein1/input/sound"], {insert: true});
