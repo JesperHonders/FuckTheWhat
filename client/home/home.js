@@ -1,6 +1,6 @@
 Template.home.helpers ({
   meldingen: function(){
-    return Meldingen.find({status: "active"}, {limit: 5});
+    return Meldingen.find({status: "done"}, {limit: 5});
   },
   events: function(){
     return Events.find({}, {limit: 5});
@@ -14,7 +14,7 @@ Template.home.onCreated(function bodyOnCreated() {
   Meteor.subscribe('Events');
 });
 
-Template.home.rendered = function () {  
+Template.home.rendered = function () {
     var curTime = Date.now();
     PleinData.find({plein: "plein1", createdAt: {$gt: curTime}}).observe({
         added: function(){
@@ -22,7 +22,7 @@ Template.home.rendered = function () {
             Meteor.chartFunctions.updateChart(data[data.length -1].value, data[data.length -1].createdAt);
         }
     });
-    
+
 //    PleinData.find({plein: "plein2"}).observe({
 //        added: function () {
 //            var data = PleinData.find({plein: "plein2"}).fetch();
@@ -60,7 +60,7 @@ Template.home.rendered = function () {
                 pointHighlightStroke: "rgba(220,220,220,1)",
                 data: Meteor.chartFunctions.addData('plein1'),
                 //data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
-            }, 
+            },
             {
                 label: "Plein 2",
                 fillColor: "rgba(151,187,205,0.2)",
@@ -77,14 +77,14 @@ Template.home.rendered = function () {
     var pleinChart = new Chart(ctx).Line(data, Meteor.chartFunctions.options);
 
     Meteor.chartFunctions.showChart(pleinChart, data, ctx);
-            
+
 
 };
 
 Template.home.events ({
   'click .meldingen' : function (event, target) {
     var article = event.currentTarget.childNodes[11];
-   
+
     event.currentTarget.classList.toggle('icon_turn');
     article.classList.toggle('article_show');
   }

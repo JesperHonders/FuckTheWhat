@@ -1,9 +1,6 @@
 Template.plein_detail.helpers ({
     meldingen: function () {
-        return Meldingen.find({});
-    },
-    thisplein: function() {
-        console.log(this)
+        return Meldingen.find({name: id});
     },
   pleinen: function(){
     return Pleinen.findOne({_id: id});

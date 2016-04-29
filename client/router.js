@@ -23,13 +23,13 @@ Router.route('/pleinen',{
 	},
 	action:function () {
   		this.render('plein_list');
-	} 
+	}
 });
 
 Router.route('/plein/:_id', {
 	name:"pleindetail",
 	waitOn: function() {
-		return [ Meteor.subscribe('Pleinen'),Meteor.subscribe('Events')]
+		return [ Meteor.subscribe('Pleinen'),Meteor.subscribe('Events'), Meteor.subscribe('Meldingen')]
 	},
 	action:function () {
   		this.render('plein_detail', {
@@ -68,4 +68,3 @@ Router.route('/mobile/detail/:_id', function () {
     }
   });
 });
-
