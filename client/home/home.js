@@ -39,17 +39,6 @@ Template.home.rendered = function () {
     var data = {
         labels: Meteor.chartFunctions.addLabels(1),
         datasets: [
-//            {
-//                label: "Plein 1",
-//                fillColor: "rgba(220,220,220,0.2)",
-//                strokeColor: "rgba(220,220,220,1)",
-//                pointColor: "rgba(220,220,220,1)",
-//                pointStrokeColor: "#fff",
-//                pointHighlightFill: "#fff",
-//                pointHighlightStroke: "rgba(220,220,220,1)",
-//                data: chartFunctions.addData(1),
-//                //data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
-//            },
             {
                 label: "Plein 1",
                 fillColor: "rgba(151,187,205, 0.2)",
@@ -59,7 +48,6 @@ Template.home.rendered = function () {
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(220,220,220,1)",
                 data: Meteor.chartFunctions.addData('plein1'),
-                //data: [random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random(), random()]
             }, 
             {
                 label: "Plein 2",

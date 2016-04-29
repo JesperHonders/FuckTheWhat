@@ -174,3 +174,27 @@ h1 {
     -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
     transform: rotate(90deg);
 }
+#plein_detail_chart{
+    max-height:400px;
+    max-width:800px;
+}
+@media all and (max-width: 1250px){
+    #plein_detail_chart{
+        max-width:600px;
+        max-height:400px;  
+    }
+}
+
+@media all and (max-width: 1050px){
+    #plein_detail_chart{
+        max-width:400px;
+        max-height:400px;  
+    }
+}
+
+@media all and (min-width: 1250px){
+    #plein_detail_chart{
+        max-height:400px;
+        max-width:800px;
+    }
+}
