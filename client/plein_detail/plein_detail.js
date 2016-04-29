@@ -42,7 +42,7 @@ Template.plein_detail.rendered = function() {
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(151,187,205,1)",
-                data: Meteor.chartFunctions.addData('plein1'),
+                data: Meteor.chartFunctions.addData(Pleinen.findOne({_id: id}).image.replace('.png','')),
             }]
     };
 
