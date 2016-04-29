@@ -12,7 +12,7 @@ Template.mobile_home.events ({
     event.currentTarget.classList.add('moveToActiveClass')
     Meteor.setTimeout(() => {
     	Meteor.call('moveToActive', this._id, this.name, this.time)
-    }, 200)
+    }, 500)
     
     
   }

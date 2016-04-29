@@ -1,4 +1,10 @@
 Template.plein_detail.helpers ({
+    meldingen: function () {
+        return Meldingen.find({});
+    },
+    thisplein: function() {
+        console.log(this)
+    },
   pleinen: function(){
     return Pleinen.findOne({_id: id});
   },

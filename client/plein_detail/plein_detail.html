@@ -30,6 +30,26 @@
       {{/each}}
     </ul>
   </section>
+  <section class="pl_meldingen">
+   <ul>
+      {{#each meldingen}}
+        
+        <li class='meldingen'>
+            <em  style='background-color: {{color disturbance}}'>Overlast: </em>
+            <p>{{name}}</p>
+            <p></p>
+            <span>{{unixToTime time}}
+            {{unixToDate time}}</span>
+            <img class='arrow_icon' src="../img/arrow.svg" alt="">
+            <article>
+              <p>{{complaint}}</p>
+            </article>
+            
+      </li>
+        
+    {{/each}}
+   </ul>
+  </section>
   </main>
  </section>
 
