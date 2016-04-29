@@ -20,7 +20,6 @@ Meteor.publish('Pleinen', function () {
 Meteor.publish("ftwimages", function(){ 
 	if (this.userId) {
 		var profileImg = Meteor.users.findOne(this.userId).profile.image;
-		console.log(profileImg);
 		return Ftwimages.find({_id:profileImg}); 
 	} else {
 		return [];
