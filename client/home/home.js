@@ -80,6 +80,10 @@ Template.home.rendered = function () {
 
 };
 
-Template.mobile_home.events ({
-
+Template.home.events ({
+  'click .meldingen' : function (event, target) {
+    var article = event.currentTarget.childNodes[9];
+    event.currentTarget.classList.toggle('icon_turn');
+    article.classList.toggle('article_show');
+  }
 });
