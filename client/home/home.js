@@ -61,7 +61,7 @@ Template.home.rendered = function () {
        //init linechart
     var pleinChart = new Chart(ctx).Line(data, Meteor.chartFunctions.options);
 
-    Meteor.chartFunctions.showChart(pleinChart);
+    Meteor.chartFunctions.showChart(pleinChart, data, ctx);
 };
 
 Template.mobile_home.events ({

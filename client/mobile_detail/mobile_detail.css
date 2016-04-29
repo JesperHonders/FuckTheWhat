@@ -55,7 +55,6 @@
 	border-radius:5px;	
 }
 .smiley-form  {
-	
 	display:flex;
 	flex-wrap:wrap;
 	justify-content:space-between;
@@ -86,20 +85,28 @@
 	margin-top:1em;
 }
 .mobile_container form #smiley {
-	background-color:white;
 	padding:.5em 1em;
 	transition:.2s ease-in-out;
 }
 .mobile_container label svg {
 	max-width:5em;
 	transition:fill .2s ease-in-out;
+	fill: white;
 }
 .mobile_container form input[type="radio"]:checked + #smiley {
-	background-color:#19aa8d;
+	background: white;
 }
-.mobile_container form input[type="radio"]:checked + #smiley svg {
-	fill:white;
-	stroke-color:white;
+
+.mobile_container form input[type="radio"]:checked + .high svg {
+	fill: #5cb85c;
+}
+
+.mobile_container form input[type="radio"]:checked + .mid svg {
+	fill: #ec971f;
+}
+
+.mobile_container form input[type="radio"]:checked + .low svg {
+	fill: #d9534f;
 }
 
 .high {
