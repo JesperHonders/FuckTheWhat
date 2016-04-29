@@ -1,14 +1,17 @@
 <template name="mobile_active">
   <main class="wrapper">
     <section class="mobile_container">
+
       <header>
         <h1>Afgeronde meldingen</h1>
+        <p>Druk op een van de onderstaande meldingen om een korte evaluatie in te voeren </p>
       </header>
       {{#each meldingen}}
           <a href="/mobile/detail/{{_id}}">
             <div class="melding">
               <h3>{{unixToTime time}}</h3>
               <h2>{{name}}</h2>
+              <i class="fa fa-check-circle" aria-hidden="true"></i>
             </div>
           </a>
       {{/each}}
