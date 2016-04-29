@@ -1,9 +1,6 @@
 Template.plein_detail.helpers ({
     meldingen: function () {
-        return Meldingen.find({});
-    },
-    thisplein: function() {
-        console.log(this)
+        return Meldingen.find({name: id});
     },
   pleinen: function(){
     return Pleinen.findOne({_id: id});
@@ -57,3 +54,14 @@ Template.plein_detail.rendered = function() {
 
     Meteor.chartFunctions.showChart(pleinChart);
 }
+Template.plein_detail.events ({
+  'click .meldingen' : function (event, target) {
+    console.log(this)
+
+    var article = event.currentTarget.childNodes[9];
+   console.log(article);
+   console.log(event.currentTarget.childNodes)
+    event.currentTarget.classList.toggle('icon_turn');
+    article.classList.toggle('article_show');
+  }
+});

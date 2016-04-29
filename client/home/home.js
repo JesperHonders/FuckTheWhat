@@ -1,6 +1,6 @@
 Template.home.helpers ({
   meldingen: function(){
-    return Meldingen.find({status: "active"}, {limit: 5});
+    return Meldingen.find({status: "done"}, {limit: 5});
   },
   events: function(){
     return Events.find({}, {limit: 5});
