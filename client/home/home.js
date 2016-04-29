@@ -8,25 +8,47 @@ Template.home.helpers ({
 })
 
 
-
 Template.home.onCreated(function bodyOnCreated() {
   Meteor.subscribe('Meldingen');
   Meteor.subscribe('Events');
 });
 
+
+Template.home.onDestroyed(function(){
+  observer.stop(); 
+//  observer2.stop();
+});
+
 Template.home.rendered = function () {  
     var curTime = Date.now();
-    PleinData.find({plein: "plein1", createdAt: {$gt: curTime}}).observe({
-        added: function(){
-            var data = PleinData.find({plein: "plein1"}).fetch();
-            Meteor.chartFunctions.updateChart(data[data.length -1].value, data[data.length -1].createdAt);
+    plein1 = -1;
+    plein2 = -1;
+    
+    
+    observer = PleinData.find({createdAt: {$gt: curTime}}).observe({
+        added: function(document){
+            console.log(document);
+            pleinNumber = document.plein;
+            
+            if(pleinNumber == 'plein1'){
+                plein1 = document.value;
+            }else{
+                plein2 = document.value;
+            }
+            if(plein1 > 0 && plein2 > 0){
+                Meteor.chartFunctions.updateChart([plein1, plein2], document.createdAt);
+                plein1 = -1;
+                plein2 = -1;
+            }
         }
     });
     
-//    PleinData.find({plein: "plein2"}).observe({
+    
+//    
+//    observer2 = PleinData.find({plein: "plein2", createdAt: {$gt: curTime}}).observe({
 //        added: function () {
 //            var data = PleinData.find({plein: "plein2"}).fetch();
-//            Meteor.chartFunctions.updateChart(data[data.length - 1].value, data[data.length - 1].createdAt);
+//            Meteor.chartFunctions.updateChart(data[data.length - 1].value, data[data.length - 1].createdAt, 'plein2');
 //
 //        }
 //    });
