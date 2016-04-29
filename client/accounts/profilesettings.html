@@ -1,10 +1,12 @@
 <template name="profile_settings">
   <section id="profile_settings">
-  	<h2>profile</h2>
   		<form class="submit-title">
-  			Titel:<input type="text" name="text" placeholder="Programma coördinator"/>
+  			<label for="titel">Titel:</label>
+  			<input type="text" name="text" placeholder="Programma coördinator" id='titel'/>
+  			<label for="file">Profielfoto</label>	
+	  		<input type="file" name="file" id="file" class="myFileInput">
   			<input type="submit" value="Submit">
-  		</form> 	
-  		<input type="file" name="file" id="file" class="myFileInput">
+  		</form> 
+
   </section>
 </template>
