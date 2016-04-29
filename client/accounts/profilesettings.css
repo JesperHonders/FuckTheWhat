@@ -1,14 +1,28 @@
 #profile_settings {
-	border:1px solid green;
+	
 	width:30em;
 }
 #profile_settings form {
-	border:1px solid blue;
+	margin-top:3em;
 	display:flex;
+	flex-wrap:wrap;
 }
 #profile_settings form input {
 	
 }
+#profile_settings form label {
+	flex-basis:20%;
+	margin:0 0;
+	padding:.5em;
+	height:100%;
+}
 #profile_settings input[type='text'] {
-	width:100%;	
+	flex-basis:80%;
+	padding:.5em;
+}
+#profile_settings input[type='file'] {
+	padding:.5em;
+}
+#profile_settings input[type='submit'] {
+	padding:.5em 2em;
 }
