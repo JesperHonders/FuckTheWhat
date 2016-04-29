@@ -6,8 +6,6 @@ Template.mobile_detail.helpers ({
 
 Template.mobile_detail.onCreated(function bodyOnCreated() {
   Meteor.subscribe('Meldingen');
-  debugger;
-  console.log(id);
 });
 
 Template.mobile_detail.events ({
@@ -28,6 +26,7 @@ Template.mobile_detail.events ({
 
 
           Meteor.call('addLog', id, disturbanceLevel, complaint);
+          return Router.go('/mobile');
   }
 
 });

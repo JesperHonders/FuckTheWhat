@@ -22,13 +22,21 @@
         <h2>Newsfeed</h2>
         <ul>
           {{#each meldingen}}
-          <li>
-            {{name}}
-            {name}}
-            {{unixToTime time}}
-            {{complaint}}
-            {{disturbance}}
-          </li>
+            <li>
+              <span>Overlast: </span>
+              {{name}}
+              {{unixToTime time}}
+              {{unixToDate time}}
+              {{complaint}}
+              {{disturbance}}
+            </li>
+          {{/each}}
+          {{#each events}}
+            <li>
+              <span>Event: </span>
+              {{name}}
+              {{date}}
+            </li>
           {{/each}}
         </ul>
     </aside>

@@ -3,5 +3,5 @@ Template.registerHelper("unixToTime", function (timestamp) {
 });
 
 Template.registerHelper("unixToDate", function (timestamp) {
-    return moment(timestamp).format("HH:mm")
+    return moment(timestamp).format("DD-MM-YY")
 });
