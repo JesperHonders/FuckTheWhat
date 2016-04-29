@@ -21,27 +21,32 @@
         </section>
     </section>
 
-    <aside id="newsfeed">
+    <section id="newsfeed">
         <h2>Newsfeed</h2>
         <ul>
           {{#each meldingen}}
-            <li>
-              <span>Overlast: </span>
-              {{name}}
-              {{unixToTime time}}
-              {{unixToDate time}}
-              {{complaint}}
-              {{disturbance}}
+            <li class='meldingen'>
+              <em>Overlast: </em>
+              <p>{{name}}</p>
+              <span>{{unixToTime time}}
+              {{unixToDate time}}</span>
+              <img class='arrow_icon' src="../img/arrow.svg" alt="">
+              <article>
+                <p>{{complaint}}</p>
+              </article>
+              
             </li>
           {{/each}}
           {{#each events}}
-            <li>
-              <span>Event: </span>
-              {{name}}
-              {{date}}
+            <li class='event'>
+              <em>Event:</em> <p>{{name}}</p> <span>{{date}}</span>
+
             </li>
           {{/each}}
         </ul>
-    </aside>
+    </section>
 
 </template>
+
+
+
